@@ -406,7 +406,7 @@ const Recipes = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12">
             
             {/* Image Column: Clean display of exact client photo */}
-            <div className="lg:col-span-6 bg-carbon/95 relative flex items-center justify-center p-4 min-h-[360px] lg:min-h-[460px]">
+            <div className="lg:col-span-6 bg-hueso relative flex items-center justify-center p-4 min-h-[360px] lg:min-h-[460px]">
               <img
                 src={lechonaRecipe.featuredImage}
                 alt={lechonaRecipe.title}
@@ -422,7 +422,7 @@ const Recipes = () => {
               </div>
 
               {/* Gallery Mini Previews (ONLY the 3 client images, served plate as LAST) */}
-              <div className="absolute bottom-4 left-4 right-4 flex gap-3 overflow-x-auto pb-1 bg-carbon/80 backdrop-blur-md p-2 rounded-xs justify-center">
+              <div className="absolute bottom-4 left-4 right-4 flex gap-3 overflow-x-auto pb-1 p-2 rounded-xs justify-center">
                 {lechonaRecipe.gallery.map((img, idx) => (
                   <button
                     key={idx}
@@ -499,9 +499,9 @@ const Recipes = () => {
         >
           <div className="grid grid-cols-1 lg:grid-cols-12">
             {/* Image Column */}
-            <div className="lg:col-span-6 bg-carbon/95 relative flex items-center justify-center p-4 min-h-[360px] lg:min-h-[460px]">
+            <div className="lg:col-span-6 bg-hueso relative flex items-center justify-center p-4 min-h-[360px] lg:min-h-[460px]">
               <img
-                src={chanfainaRecipe.gallery[chanfainaImageIndex].url}
+                src={chanfainaRecipe.featuredImage}
                 alt={chanfainaRecipe.title}
                 className="max-h-[420px] w-auto h-auto object-contain rounded-xs shadow-md transition-transform duration-500 hover:scale-[1.02]"
               />
@@ -509,18 +509,21 @@ const Recipes = () => {
                 <span className="bg-carbon text-crema font-serif text-xs px-3 py-1 uppercase tracking-widest shadow-sm border border-crema/20">
                   {chanfainaRecipe.code}
                 </span>
-                <span className="bg-oliva text-crema font-sans text-xs px-3 py-1 uppercase tracking-wider font-medium shadow-sm flex items-center gap-1">
+                <span className="bg-hueso text-carbon font-sans text-xs px-3 py-1 uppercase tracking-wider font-medium shadow-sm flex items-center gap-1">
                   <MapPin className="w-3.5 h-3.5" /> Tolima · Santander · Boyacá
                 </span>
               </div>
-              <div className="absolute bottom-4 left-4 right-4 flex gap-3 overflow-x-auto pb-1 bg-carbon/80 backdrop-blur-md p-2 rounded-xs justify-center">
+              <div className="absolute bottom-4 left-4 right-4 flex gap-3 overflow-x-auto pb-1 p-2 rounded-xs justify-center">
                 {chanfainaRecipe.gallery.map((img, idx) => (
                   <button
                     key={idx}
-                    onClick={() => setChanfainaImageIndex(idx)}
+                    onClick={() => {
+                      setSelectedChanfaina(chanfainaRecipe);
+                      setChanfainaImageIndex(idx);
+                    }}
                     className={`w-16 h-16 rounded overflow-hidden shrink-0 border-2 transition-all relative ${
-                      chanfainaImageIndex === idx
-                        ? 'border-terracota ring-2 ring-terracota/40'
+                      idx === chanfainaRecipe.gallery.length - 1
+                        ? 'border-hueso ring-2 ring-hueso/40'
                         : 'border-crema/40 hover:border-crema'
                     }`}
                     title={img.caption}
@@ -537,55 +540,43 @@ const Recipes = () => {
             {/* Info Column */}
             <div className="lg:col-span-6 p-8 md:p-10 flex flex-col justify-between space-y-6 bg-crema">
               <div className="space-y-4">
-                <div className="flex flex-wrap gap-2 text-xs font-sans uppercase tracking-widest">
-                  <span className="flex items-center gap-1 text-oliva">
-                    <MapPin className="w-3.5 h-3.5 text-terracota" /> {chanfainaRecipe.location}
+                <div className="flex flex-wrap items-center gap-3 text-xs font-sans text-oliva uppercase tracking-widest">
+                  <span className="flex items-center gap-1">
+                    <MapPin className="w-3.5 h-3.5 text-oliva" /> {chanfainaRecipe.location}
                   </span>
-                  <span className="flex items-center gap-1 text-oliva ml-auto">
-                    <Clock className="w-3.5 h-3.5 text-terracota" /> {chanfainaRecipe.cookingTime}
+                  <span>•</span>
+                  <span className="flex items-center gap-1">
+                    <Clock className="w-3.5 h-3.5 text-oliva" /> {chanfainaRecipe.cookingTime}
                   </span>
                 </div>
 
-                <div>
-                  <h2 className="font-serif text-3xl md:text-4xl text-carbon leading-tight mb-2">
-                    {chanfainaRecipe.title}
-                  </h2>
-                  <p className="font-serif italic text-lg text-terracota/80 leading-snug">
-                    {chanfainaRecipe.subtitle}
-                  </p>
+                <h2 className="font-serif text-2xl md:text-3xl text-carbon leading-snug">
+                  {chanfainaRecipe.title}
+                </h2>
+
+                <div className="inline-block bg-hueso border-l-2 border-carbon px-3 py-1 text-carbon font-sans text-xs uppercase tracking-wider font-semibold">
+                  {chanfainaRecipe.identityTag}
                 </div>
 
-                <p className="font-sub text-carbon/75 text-sm leading-relaxed border-l-2 border-terracota/30 pl-4">
+                <p className="font-sub text-carbon/75 text-sm md:text-base leading-relaxed">
                   {chanfainaRecipe.summary}
                 </p>
-
-                <div className="flex flex-wrap gap-3 text-xs">
-                  <span className="bg-hueso/60 border border-carbon/15 text-carbon px-3 py-1 font-sans uppercase tracking-wider flex items-center gap-1">
-                    <Utensils className="w-3 h-3 text-terracota" /> {chanfainaRecipe.identityTag}
-                  </span>
-                  <span className="bg-hueso/60 border border-carbon/15 text-carbon px-3 py-1 font-sans uppercase tracking-wider flex items-center gap-1">
-                    <Info className="w-3 h-3 text-oliva" /> {chanfainaRecipe.recognition}
-                  </span>
-                </div>
               </div>
 
-              <div className="pt-6 border-t border-carbon/10 space-y-3">
-                <p className="text-xs font-sans text-carbon/50 uppercase tracking-widest flex items-center gap-1.5">
-                  <BookOpen className="w-3.5 h-3.5 text-oliva" />
-                  {chanfainaRecipe.credits}
-                </p>
+              {/* Action Button */}
+              <div className="pt-4 border-t border-carbon/10">
                 <button
                   onClick={() => {
                     setSelectedChanfaina(chanfainaRecipe);
                     setChanfainaTab('historia');
                   }}
-                  className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-carbon text-crema text-xs font-sans font-medium uppercase tracking-widest hover:bg-terracota transition-colors group/btn"
+                  className="w-full bg-carbon text-crema font-sans uppercase tracking-widest text-xs py-4 px-6 hover:bg-hueso hover:text-carbon transition-all duration-300 flex items-center justify-center gap-2 group shadow-sm"
                 >
-                  <BookOpen className="w-4 h-4" />
-                  <span>Leer Ficha Completa</span>
-                  <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  <span>Explorar Ficha Patrimonial Completa</span>
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
+
             </div>
           </div>
         </motion.div>
