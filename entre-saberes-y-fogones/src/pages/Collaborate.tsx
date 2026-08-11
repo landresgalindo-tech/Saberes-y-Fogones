@@ -184,11 +184,29 @@ const Collaborate = () => {
                 <label className="font-sans text-xs uppercase tracking-widest text-carbon">
                   Asunto
                 </label>
-                <input
-                  type="text"
-                  className="w-full bg-transparent border-b border-carbon/20 py-3 focus:outline-none focus:border-terracota transition-colors font-sub text-carbon placeholder:text-carbon/30"
-                  placeholder="¿En qué podemos ayudarte?"
-                />
+                <select
+                  defaultValue=""
+                  className="w-full bg-transparent border-b border-carbon/20 py-3 focus:outline-none focus:border-terracota transition-colors font-sub text-carbon cursor-pointer"
+                >
+                  <option value="" disabled className="bg-crema text-carbon/50">
+                    Selecciona una opción
+                  </option>
+                  <option value="Consulta" className="bg-crema text-carbon">
+                    Consulta
+                  </option>
+                  <option value="Aporte" className="bg-crema text-carbon">
+                    Aporte
+                  </option>
+                  <option value="Investigación" className="bg-crema text-carbon">
+                    Investigación
+                  </option>
+                  <option value="Invitación" className="bg-crema text-carbon">
+                    Invitación
+                  </option>
+                  <option value="Otros" className="bg-crema text-carbon">
+                    Otros
+                  </option>
+                </select>
               </div>
 
               <div className="space-y-2">
