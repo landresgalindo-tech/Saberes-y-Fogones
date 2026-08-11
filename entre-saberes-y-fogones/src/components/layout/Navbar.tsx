@@ -36,7 +36,7 @@ const Navbar = () => {
           <div
             className="w-14 h-14 rounded-full border border-carbon/60 overflow-hidden flex-shrink-0"
             style={{
-              backgroundImage: "url('/entre saberes y fogones.jpeg')",
+              backgroundImage: "url('/hero.jpeg')",
               backgroundSize: '200%',
               backgroundPosition: 'center 5%',
               backgroundRepeat: 'no-repeat',

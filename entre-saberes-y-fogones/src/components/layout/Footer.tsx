@@ -26,19 +26,18 @@ const Footer = () => {
           <Link to="/sobre-nosotros" className="text-crema/70 hover:text-terracota transition-colors w-fit">Sobre Nosotros</Link>
           <Link to="/editorial" className="text-crema/70 hover:text-terracota transition-colors w-fit">Editorial</Link>
           <Link to="/recetas" className="text-crema/70 hover:text-terracota transition-colors w-fit">Recetas Documentadas</Link>
+          <Link to="/galeria" className="text-crema/70 hover:text-terracota transition-colors w-fit">Galería</Link>
+          <Link to="/colabora" className="text-crema/70 hover:text-terracota transition-colors w-fit">Contáctanos</Link>
         </div>
 
         <div className="flex flex-col space-y-6">
           <h4 className="font-serif uppercase tracking-widest text-sm mb-2 text-hueso">Contacto</h4>
           <div className="flex gap-4">
-            <a href="mailto:contacto@entresaberesyfogones.org" className="w-10 h-10 rounded-full border border-crema/20 flex items-center justify-center hover:bg-terracota hover:border-terracota transition-all">
+            <a href="mailto:entresaberesyfogones@gmail.com" className="w-10 h-10 rounded-full border border-crema/20 flex items-center justify-center hover:bg-terracota hover:border-terracota transition-all">
               <Mail size={18} />
             </a>
-            <a href="#" className="font-sans text-xs uppercase tracking-widest text-crema/70 hover:text-terracota flex items-center">
+            <a href="https://instagram.com/entresaberesyfogones" target="_blank" rel="noopener noreferrer" className="font-sans text-xs uppercase tracking-widest text-crema/70 hover:text-terracota flex items-center">
               Instagram
-            </a>
-            <a href="#" className="font-sans text-xs uppercase tracking-widest text-crema/70 hover:text-terracota flex items-center">
-              Facebook
             </a>
           </div>
           <p className="text-crema/50 text-xs">

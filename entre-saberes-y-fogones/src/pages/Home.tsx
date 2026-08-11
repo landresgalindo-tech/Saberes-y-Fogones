@@ -6,8 +6,8 @@ const Home = () => {
       {/* Hero Section — solo la foto */}
       <section className="relative h-screen overflow-hidden">
         <img
-          src="/entre saberes y fogones.jpeg"
-          alt="Cocina tradicional"
+          src="/hero.jpeg"
+          alt="Cocina tradicional colombiana"
           className="w-full h-full object-cover object-center"
         />
       </section>
@@ -53,8 +53,8 @@ const Home = () => {
 
             {/* Llamado a explorar */}
             <p className="font-sub text-carbon/75 text-lg leading-relaxed">
-              Recorre las regiones de Colombia y descubre lo que allí se cocina, se recuerda y se transmite o entra a
-              Artículos e Investigaciones para leer lo más reciente.
+              Recorre las regiones de Colombia y descubre lo que allí se cocina, se recuerda y se transmite. Entra a
+              la sección Editorial para leer investigaciones y ensayos sobre patrimonio gastronómico.
             </p>
 
             {/* Llamado a participar */}
