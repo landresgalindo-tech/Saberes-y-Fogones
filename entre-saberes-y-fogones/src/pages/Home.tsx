@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 const Home = () => {
   return (
     <div className="w-full">
-      {/* Hero Section — solo la foto */}
-      <section className="relative w-full h-[70vh] md:h-screen overflow-hidden bg-crema">
+      {/* Hero Section — logo/foto */}
+      <section className="relative w-full flex justify-center items-center bg-crema pt-28 pb-10 md:pt-0 md:pb-0 md:h-screen overflow-hidden">
         <img
           src="/hero.jpeg"
           alt="Cocina tradicional colombiana"
-          className="w-full h-full object-contain md:object-cover object-center p-4 md:p-0"
+          className="w-11/12 max-w-lg h-auto object-contain md:w-full md:h-full md:max-w-none md:object-cover object-center"
         />
       </section>
 
