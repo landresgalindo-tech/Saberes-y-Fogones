@@ -4,11 +4,11 @@ const Home = () => {
   return (
     <div className="w-full">
       {/* Hero Section — solo la foto */}
-      <section className="relative w-full md:h-screen overflow-hidden">
+      <section className="relative w-full h-[70vh] md:h-screen overflow-hidden bg-crema">
         <img
           src="/hero.jpeg"
           alt="Cocina tradicional colombiana"
-          className="w-full h-auto md:h-full md:object-cover object-center"
+          className="w-full h-full object-contain md:object-cover object-center p-4 md:p-0"
         />
       </section>
 
