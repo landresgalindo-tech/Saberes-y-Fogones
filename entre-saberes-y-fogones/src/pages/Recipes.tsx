@@ -339,31 +339,6 @@ const chanfainaRecipe: Recipe = {
     'Investigación documental y etnográfica sobre la chanfaina en Colombia, basada en fuentes académicas indexadas y documentación territorial, en el marco del proyecto Entre Saberes y Fogones.'
 };
 
-const secondaryRecipes = [
-  {
-    id: 'viudo-de-pescado',
-    code: 'Ficha N°003',
-    title: 'Viudo de Pescado del Río Magdalena',
-    subtitle: 'Cocción bajo tierra con hojas de plátano en las riberas del Tolima Grande.',
-    location: 'Honda y La Chamba, Tolima',
-    region: 'Cuenca del Magdalena',
-    cookingTime: '~3 Horas de Fuego',
-    featuredImage: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=1200&auto=format&fit=crop',
-    tag: 'Técnica Ancestral de Bajo Tierra'
-  },
-  {
-    id: 'sancocho-gallo',
-    code: 'Ficha N°004',
-    title: 'Sancocho de Gallina Criolla en Fogón de Piedra',
-    subtitle: 'El caldo de tres carnes, plátano verde y yuca de finca tradicional.',
-    location: 'Natagaima, Tolima',
-    region: 'Sur del Tolima',
-    cookingTime: '~4 Horas de Fogón',
-    featuredImage: 'https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop',
-    tag: 'Cocina de Resistencia Indígena'
-  }
-];
-
 const Recipes = () => {
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
   const [activeTab, setActiveTab] = useState<'historia' | 'ingredientes' | 'preparacion' | 'memoria' | 'fuentes'>('historia');
@@ -581,67 +556,7 @@ const Recipes = () => {
           </div>
         </motion.div>
 
-        {/* Section Title for upcoming recipes */}
-        <div className="flex items-center justify-between mb-8 border-b border-carbon/15 pb-4">
-          <h3 className="font-serif text-2xl text-carbon uppercase tracking-wide">
-            Otras Fichas en Proceso de Documentación
-          </h3>
-          <span className="text-xs font-sans uppercase tracking-widest text-oliva">
-            Investigación de Campo
-          </span>
-        </div>
 
-        {/* Secondary Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {secondaryRecipes.map((item) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="group border border-carbon/15 bg-hueso/10 hover:border-terracota/40 transition-colors duration-300 flex flex-col justify-between"
-            >
-              <div className="overflow-hidden h-56 relative bg-carbon/90 flex items-center justify-center">
-                <img
-                  src={item.featuredImage}
-                  alt={item.title}
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                />
-                <div className="absolute top-3 left-3 bg-crema px-3 py-1 border border-carbon/20 text-xs font-serif uppercase tracking-widest text-carbon">
-                  {item.code}
-                </div>
-                <div className="absolute bottom-3 right-3 bg-carbon/80 backdrop-blur-sm text-crema text-[11px] font-sans px-2.5 py-1 uppercase tracking-wider">
-                  {item.tag}
-                </div>
-              </div>
-
-              <div className="p-6 space-y-3">
-                <div className="flex items-center justify-between text-xs font-sans text-oliva uppercase tracking-wider">
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-3 h-3 text-terracota" /> {item.location}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-3 h-3 text-terracota" /> {item.cookingTime}
-                  </span>
-                </div>
-
-                <h4 className="font-serif text-xl text-carbon group-hover:text-terracota transition-colors">
-                  {item.title}
-                </h4>
-
-                <p className="font-sub text-carbon/70 text-xs leading-relaxed">
-                  {item.subtitle}
-                </p>
-
-                <div className="pt-3 border-t border-carbon/10 text-right">
-                  <span className="inline-flex items-center gap-1 text-xs font-sans text-carbon/50 uppercase tracking-widest italic">
-                    En fase de trabajo de campo...
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
 
       </div>
 
