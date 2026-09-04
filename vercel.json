@@ -1,4 +1,0 @@
-{
-  "buildCommand": "cd entre-saberes-y-fogones && npm install && npm run build",
-  "outputDirectory": "entre-saberes-y-fogones/dist"
-}
