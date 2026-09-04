@@ -68,7 +68,7 @@ const lechonaRecipe: Recipe = {
   cookingTime: '~13 Horas de Horneo',
   recognition: '#1 Mejor plato con cerdo del mundo (TasteAtlas 2024)',
   identityTag: 'Sin Arroz (100% Arveja Amarilla)',
-  featuredImage: '/foto_cliente_3_hd.png',
+  featuredImage: '/lechona_plato_nuevo.png',
   gallery: [
     {
       url: '/foto_cliente_1_hd.png',
@@ -79,7 +79,7 @@ const lechonaRecipe: Recipe = {
       caption: '2. Salida de la lechona horneada con carne desmechada jugosa y corteza dorada crocante.'
     },
     {
-      url: '/foto_cliente_3_hd.png',
+      url: '/lechona_plato_nuevo.png',
       caption: '3. Servicio final en el plato: lechona espinaluna con cuero crocante, insulso de maíz y arepa blanca.'
     }
   ],

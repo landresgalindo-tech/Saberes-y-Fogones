@@ -38,7 +38,7 @@ const articles: Article[] = [
     doi: '10.63688/ze3tzy94',
     url: 'https://doi.org/10.63688/ze3tzy94',
     category: 'Patrimonio Gastronómico • Investigación Aplicada',
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1774&auto=format&fit=crop'
+    image: '/lechona_plato_nuevo.png'
   }
 ];
 
