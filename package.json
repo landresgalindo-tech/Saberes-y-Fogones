@@ -1,0 +1,8 @@
+{
+  "name": "saberes-y-fogones-root",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd entre-saberes-y-fogones && npm install && npm run build"
+  }
+}
