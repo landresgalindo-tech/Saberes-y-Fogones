@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 const ContactItem = ({
   icon,
@@ -35,6 +36,18 @@ const ContactItem = ({
 );
 
 const Collaborate = () => {
+  useEffect(() => {
+    // Inject noindex to prevent this specific page from being indexed by Google
+    const meta = document.createElement('meta');
+    meta.name = "robots";
+    meta.content = "noindex";
+    document.head.appendChild(meta);
+
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
+
   return (
     <div className="w-full bg-hueso/20 min-h-screen pt-32 pb-24">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
