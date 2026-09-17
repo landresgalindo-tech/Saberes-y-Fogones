@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Editorial from './pages/Editorial';
 import Recipes from './pages/Recipes';
+import RecipeDetail from './pages/RecipeDetail';
 import Gallery from './pages/Gallery';
 import Collaborate from './pages/Collaborate';
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="sobre-nosotros" element={<About />} />
           <Route path="editorial" element={<Editorial />} />
           <Route path="recetas" element={<Recipes />} />
+          <Route path="recetas/:recipeId" element={<RecipeDetail />} />
           <Route path="galeria" element={<Gallery />} />
           <Route path="colabora" element={<Collaborate />} />
         </Route>
